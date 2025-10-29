@@ -23,3 +23,54 @@
 ### Pour vérifier l'empreinte de la clé hôte j'ai fait ```ssh maeld@localhost```et j'ai obtenu mon fingerprint 
 
 ![alt text](image-3.png)
+
+## Partie 3
+
+## Définir un port non standard pour SSH
+
+### Pour définir un port non standard on fait la commande ```sudo nano /etc/ssh/sshd_config``` on cherche la ligne avec le #Port 22 et on le modifie, moi j'ai mis le #Port 2222
+
+### On sauvegarde le nano puis on redémarre le serveur SSH avec ```sudo systemctl restart ssh```
+
+### J'ai utiliser la commande ```sudo ss -tnlp | grep ssh``` pour voir le fichier où le port est changé
+
+![alt text](image-4.png)
+
+## Interdire la connexion directe du compte root
+
+### On va devoir rouvrir le ```sudo nano /etc/ssh/sshd_config``` et rajouter une ligne contenant "PermitRootLogin no"
+
+![alt text](image-5.png)
+
+### On sauvegarde et relance ssh avec ```sudo systemctl restart ssh```
+
+## Restreindre l’accès à une liste d’utilisateurs autorisés
+
+### On ouvre encore une fois le nano ```sudo nano /etc/ssh/sshd_config```
+
+### J'ai rajouter la ligne "AllowUsers maeld" 
+
+![alt text](image-6.png)
+
+### Sauvegarder et redémarrez ssh ```sudo systemctl restart ssh```
+
+## Désactiver l’authentification par mot de passe ; n’autoriser que l’authentification par clé publique
+
+### Encore une fois, on ouvre le nano ```sudo nano /etc/ssh/sshd_config```
+
+### On écrit la ligne "PasswordAuthentication no"
+
+![alt text](image-8.png)
+
+### Sauvegarder et redémarrez ssh ```sudo systemctl restart ssh```
+
+## Réduire la fenêtre d’authentification et le nombre maximum de tentatives
+
+### On ouvre le nano ```sudo nano /etc/ssh/sshd_config```
+
+### On ajoute les lignes "MaxAuthTries 5" pour limiter a 5 tentative maximum et "LoginGraceTime 30s" pour limiter la fenêtre de saisie à 30 secondes
+
+![alt text](image-9.png)
+
+### Sauvegarder et redémarrez ssh ```sudo systemctl restart ssh```
+
