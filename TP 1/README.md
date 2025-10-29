@@ -74,3 +74,20 @@
 
 ### Sauvegarder et redémarrez ssh ```sudo systemctl restart ssh```
 
+##
+
+## Pare-feu et ouverture du port SSH
+
+### J'ai trouver le pare-feux ufw qui avais l'air plutôt simple et efficace sur Ubuntu
+
+### Donc j'ai commencer avec ```sudo ufw enable``` 
+
+### Ensuite on refuse toutes les connexions qui entre par défaut avec ```sudo ufw default deny incoming```
+
+### Puis on autorise les connexions sortantes avec ```sudo ufw default allow outgoing```
+
+### Après j'ai autoriser uniquement le port 2222 que j'ai choisis plus tôt avec ```sudo ufw allow 2222/tcp```
+
+### Et j'ai vérifier l'état du pare-feu en fesant ```sudo ufw status verbose```
+
+![alt text](image-7.png)
