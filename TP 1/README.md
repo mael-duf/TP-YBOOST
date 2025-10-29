@@ -16,7 +16,7 @@
 
 ### Après j'ai copier la clé public dans le fichier authorized_keys avec ```cat ~/.ssh/id_ed25519.pub >> ~/.ssh/authorized_keys```
 
-### Et on affiche le contenu du fichier authorized_keys avec ```cat ~/.ssh/authorized_keys```
+### Et ensuite on affiche le contenu du fichier authorized_keys avec ```cat ~/.ssh/authorized_keys```
 
 ![alt text](image-2.png)
 
