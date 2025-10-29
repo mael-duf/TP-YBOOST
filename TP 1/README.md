@@ -20,6 +20,6 @@
 
 ![alt text](image-2.png)
 
-### Pour vérifier l'empreinte de la clé hôte j'ai fait ```ssh maeld@localhost```et j'ai obtenu mon fingerprint
+### Pour vérifier l'empreinte de la clé hôte j'ai fait ```ssh maeld@localhost```et j'ai obtenu mon fingerprint 
 
 ![alt text](image-3.png)
