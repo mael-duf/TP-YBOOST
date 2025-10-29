@@ -102,3 +102,32 @@
 
 ![alt text](image-11.png)
 
+## Partie 6 - Protection anti-brute-force et surveillance
+
+## Installer et configurer un outil de blocage automatique des IP après tentatives échouées
+
+### On va installer Fail2ban en fesant ```sudo apt update``` puis ```sudo apt install fail2ban```
+
+### Ensuite j'ai adapter la configuration fail2ban pour ssh en fesant ```sudo nano /etc/fail2ban/jail.local``` et dans le nano j'ai rentrer :
+```
+[sshd]
+enabled = true
+port = 2222
+filter = sshd
+logpath = /var/log/auth.log
+maxretry = 3
+bantime = 600
+```
+
+![alt text](image-12.png)
+
+### Puis j'ai sauvegarder le nano et j'ai redémarrer fail2ban avec ```sudo systemctl restart fail2ban```
+
+### On vérifie le bannissement avec ```sudo fail2ban-client status sshd```
+
+![alt text](image-13.png)
+
+### Puis on consulter les log avec ```sudo cat /var/log/fail2ban.log | tail -30```
+
+![alt text](image-14.png)
+
