@@ -2,7 +2,7 @@
 
 ## Partie 1 — Installation et vérification du service SSH
 
-### J'ai utiliser la commande ```sudo systemctl status ssh``` pour vérifier si le status de ssh
+### J'ai utiliser la commande ```sudo systemctl status ssh``` pour vérifier le status de ssh
 
 ![alt text](image.png)
 
@@ -76,7 +76,7 @@
 
 ##
 
-## Pare-feu et ouverture du port SSH
+## Partie 4 - Pare-feu et ouverture du port SSH
 
 ### J'ai trouver le pare-feux ufw qui avais l'air plutôt simple et efficace sur Ubuntu
 
@@ -91,3 +91,14 @@
 ### Et j'ai vérifier l'état du pare-feu en fesant ```sudo ufw status verbose```
 
 ![alt text](image-7.png)
+
+## Partie 5 - Vérification des permissions et intégrité
+
+### Pour vérifier les permission de .ssh j'ai fait ```ls -ld ~/.ssh``` et j'ai eu drwx------
+
+![alt text](image-10.png)
+
+### Pour vérifier les permission de authorized_keys j'ai fait ```ls -l ~/.ssh/authorized_keys``` et j'ai eu -rw-------
+
+![alt text](image-11.png)
+
